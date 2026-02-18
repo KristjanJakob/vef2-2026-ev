@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import quizRouter from './routes/quiz.js';
 import indexRouter from './routes/index.js';
 
