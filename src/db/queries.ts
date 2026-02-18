@@ -1,4 +1,4 @@
-import pool from './pool.js';
+import pool from './pool';
 
 export async function getPrograms() {
   const result = await pool.query('SELECT * FROM programs');
