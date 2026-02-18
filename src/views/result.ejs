@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Niðurstaða</title>
+</head>
+<body>
+  <% if (program) { %>
+    <h1>Þú ættir að skoða:</h1>
+    <h2><%= program.title %></h2>
+    <p><%= program.description %></p>
+  <% } else { %>
+    <p>Engin niðurstaða fannst.</p>
+  <% } %>
+
+  <a href="/">Til baka</a>
+</body>
+</html>
