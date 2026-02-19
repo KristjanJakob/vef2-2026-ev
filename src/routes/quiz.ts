@@ -16,7 +16,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const trait = calculateTrait(req.body.interest);
+  const interest = String(req.body.interest);
+  const confidence = Number(req.body.confidence ?? 5);
+  
+  const trait = calculateTrait(interest, confidence);  
 
   const programs = (await getPrograms()) as Program[];
   const match = programs.find((p: Program) => p.trait === trait);

@@ -7,15 +7,36 @@
 <body>
   <div class="container">
     <div class="card">
-      <h2>Hvað heillar þig mest?</h2>
+      <form method="POST" id="quizForm" class="options">
+        <!-- Spurning 1 -->
+        <div id="q1">
+        <h2>Hvað heillar þig mest?</h2>
+        <button type="button" class="option" value="math">Stærðfræði</button>
+        <button type="button" class="option" value="art">List</button>
+        <button type="button" class="option" value="people">Vinna með fólki</button>
+        <button type="button" class="option" value="tech">Tækni</button>
+        </div>
 
-      <form method="POST" class="options">
-        <button class="option" name="interest" value="math">Stærðfræði</button>
-        <button class="option" name="interest" value="art">List</button>
-        <button class="option" name="interest" value="people">Vinna með fólki</button>
-        <button class="option" name="interest" value="tech">Tækni</button>
+        <!-- Spurning 2 -->
+        <div id="q2" style="display:none;">
+          <div class="sliderBlock">
+            <label for="confidence">Hversu mikið fílarðu að leysa vandamál?</label>
+            <div class="sliderRow">
+              <span class="muted">Lítið</span>
+              <input id="confidence" type="range" name="confidence" min="0" max="10" value="5">
+              <span class="muted">Mjög</span>
+            </div>
+            <div class="sliderValue">
+              Val: <strong id="confidenceValue">5</strong>/10
+            </div>
+  
+            <input type="hidden" name="interest" id="interestInput" value="">
+            <button class="btn" type="submit">Senda</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
+  <script src="/js/quiz-client.js" defer></script>
 </body>
 </html>
