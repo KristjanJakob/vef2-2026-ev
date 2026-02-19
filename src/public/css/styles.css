@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: #fff;
+}
+  
+.container {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 0 16px;
+}
+  
+.card {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 12px;
+}
+  
+a, button {
+    font: inherit;
+}
+  
+.btn, a.btn, button.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0;
+    background: #7c3aed;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.btn:hover { background: #6d28d9; }
+  
+.options {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+}
+  
+.result {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #064e3b;
+}  
