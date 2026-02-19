@@ -1,61 +1,64 @@
 # Pathfinder
 Pathfinder er vefforit/vefsíða sem hjálpar ungu fólki að finna hvaða nám gæti hentað þeim út frá einfaldri könnun.
 
-## Lýsing
-Notandi svarar spurningum og fær svo tillögur að násmleið út frá áhugasviði og styrkleikum.
+### 1. Inngangur
+Pathfinder er vefforrit sem hjálpar fólki að finna hvaða nám gæti hentað þeim út frá könnun. Hugmyndin kom út frá því að margir eru óvissir um námsval.
 
-Verkefnið er unnið í Nide.js með Express og PostgreSQL gagnagrunni.
 
----
+### 2. Hvaða skilyrði verða útfærð
+Verkefnið um uppfylla eftirfarandi skilyrði:
+- Bakendi útfærður
+- Framendi útfærður
+- Flóknari framendi
+- Gagnagrunnur notaður
+- Verkefni sett upp í hýsingu
 
-## Tæki og tól
+### 3. Verkplan
+Vika 6-7:
+- Hugmynd og grunnuppsetning
+- Setja upp Express og PostgreSQL
+- Búa til einfalt quiz
+
+Vika 8-9:
+- Búa til fleiri spurningar
+- Geyma niðurstöður í gagnagrunni
+
+Vika 10-12:
+- Bæta hönnun og útlit
+- Prófun á virkni
+
+Vika 13:
+- Setja upp á hýsingu
+
+Vika 14-15:
+- Skrifa skýrslu
+
+### 4. Matskvarði
+20% Bakendi útfærður og virkur
+20% Gagnagrunnur notaður rétt
+20% Framendi og margar spurningar
+20% Verkefni sett upp í hýsingu
+20% Skýrsla og útskýring á forritinu
+
+### 5. Tæki og tól
 - Node.js
 - Express
 - EJS
 - PostgreSQL
 - Docker
 
----
-
-## Uppsetning
-### 1. Klóna repo
-git clone <repo-url>
-cd pathfinder
-
-### 1. Setja upp þenv
-Búðu til `.env` skrá:
-DATABASE_URL=postgres://postgres:postgres@localhost:5432/studyquiz
-PORT=3000
-
 ### 3. Ræsa PostgreSQL með Docker
 docker-compose up -d
 
-### 4. Búa til töflur
+### 6. Uppsetning
 Keyrðu:
 psql postgres://postgres:postgres@localhost:5432/studyquiz -f sql/schema.sql
 
 psql postgres://postgres:postgres@localhost:5432/studyquiz -f sql/seed.sql
 
-### 5. Ræsa server
+#### Ræsa server
 npm install
 npm run dev
 
 Opna:
 http://localhost:3000
-
----
-
-## Verkefnisskipulag
-/src
-    routes/
-    db/
-    services/
-    public/
-
----
-
-## Markmið
-- Útfæra quiz
-- Nota gagnagrunn
-- Hýsa verkefnið
-- Skrifa skýrslu
