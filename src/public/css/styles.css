@@ -3,41 +3,68 @@ body {
     font-family: Arial, sans-serif;
     background: #111827;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
 }
   
 .container {
-    max-width: 720px;
-    margin: 60px auto;
-    padding: 0 16px;
+    max-width: 500px;
+    width: 100%;
 }
   
 .card {
     background: #1f2937;
-    padding: 20px;
+    padding: 24px;
+    text-align: center;
     border-radius: 12px;
+}
+
+h1,h2 {
+    margin-top: 0;
 }
   
 a, button {
     font: inherit;
 }
+
+a {
+    text-decoration: none;
+
+}
   
-.btn, a.btn, button.btn {
+button, .btn {
     display: inline-block;
     padding: 10px 14px;
     border-radius: 10px;
     border: 0;
-    background: #7c3aed;
+    background: #3c7dff;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
   
-.btn:hover { background: #6d28d9; }
+.btn:hover, button:hover, a.btn:hover {
+    transform: scale(1.1);
+}
   
 .options {
-    display: grid;
-    gap: 10px;
-    margin-top: 14px;
+    background: #374151;
+    border: 1px solid #4b5563;
+    padding: 16px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background: #4b5563;
+    transform: translateY(-3px);
 }
   
 .result {

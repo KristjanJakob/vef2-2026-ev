@@ -2,15 +2,20 @@
 <html>
 <head>
   <title>Quiz</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <h2>Hvað heillar þig mest?</h2>
+  <div class="container">
+    <div class="card">
+      <h2>Hvað heillar þig mest?</h2>
 
-  <form method="POST">
-    <button name="interest" value="math">Stærðfræði</button>
-    <button name="interest" value="art">List</button>
-    <button name="interest" value="people">Vinna með fólki</button>
-    <button name="interest" value="tech">Tækni</button>
-  </form>
+      <form method="POST" class="options">
+        <button class="option" name="interest" value="math">Stærðfræði</button>
+        <button class="option" name="interest" value="art">List</button>
+        <button class="option" name="interest" value="people">Vinna með fólki</button>
+        <button class="option" name="interest" value="tech">Tækni</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
