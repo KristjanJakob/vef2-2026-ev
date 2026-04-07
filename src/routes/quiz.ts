@@ -1,6 +1,6 @@
 import express from 'express';
 import { getPrograms, insertResult } from '../db/queries';
-import { calculateTrait } from '../services/scoring';
+import { calculateScores } from '../services/scoring';
 
 const router = express.Router();
 
@@ -16,16 +16,33 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const trait = calculateTrait(req.body.interest);
+  const interest = String(req.body.interest);
+  const confidence = Number(req.body.confidence ?? 5);
+  const answer2 = String(req.body.answer2 ?? '');
+  const answer3 = String(req.body.answer3 ?? '');
+  
+
+  const scores = calculateScores(interest, confidence, answer2, answer3);
 
   const programs = (await getPrograms()) as Program[];
-  const match = programs.find((p: Program) => p.trait === trait);
 
-  if (match) {
-    await insertResult(match.title);
+  const results = programs.map((p) => {
+    const score = scores[p.trait as keyof typeof scores] || 0;
+    return {
+      ...p,
+      score
+    };
+  });
+
+  results.sort((a, b) => b.score - a.score);
+
+  const topResults = results.slice(0, 3);
+
+  if (topResults.length > 0) {
+    await insertResult(topResults[0].title);
   }
 
-  res.render('result', { program: match });
+  res.render('result', { programs: topResults });
 });
 
 export default router;

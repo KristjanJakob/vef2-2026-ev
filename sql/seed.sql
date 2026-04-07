@@ -1,5 +1,15 @@
 INSERT INTO programs (title, description, trait) VALUES
-('Tölvunarfræði', 'Fyrir þá sem elska rökhugsun og forritun.', 'analytical'),
-('Grafísk hönnun', 'Fyrir skapandi einstaklinga.', 'creative'),
-('Sjúkraþjálfun', 'Fyrir þá sem vilja vinna með fólki.', 'social'),
-('Rafvirki', 'Fyrir verklega og tæknilega sinnað fólk.', 'hands');
+('Tölvunarfræði', 'Fyrir þá sem elska rökhugsun, forritun og lausnamiðaða hugsun.', 'analytical'),
+('Verkfræði', 'Fyrir þá sem vilja vinna með stærðfræði, kerfi og tæknilausnir.', 'analytical'),
+('Grafísk hönnun', 'Fyrir skapandi einstaklinga með áhuga á sjónrænni framsetningu.', 'creative'),
+('Margmiðlun', 'Fyrir þau sem vilja vinna með miðla, hönnun og skapandi verkefni.', 'creative'),
+('Sjúkraþjálfun', 'Fyrir þau sem vilja hjálpa fólki og vinna með heilsu.', 'social'),
+('Rafvirki', 'Fyrir verklega og tæknilega sinnað fólk sem vill vinna með búnað og kerfi.', 'hands'),
+('Verkfræði', 'Tækni + stærðfræði', 'analytical'),
+('Hugbúnaðarverkfræði', 'Forritun og kerfi', 'analytical'),
+('Myndlist', 'Skapandi list', 'creative'),
+('Kvikmyndagerð', 'Video og miðlun', 'creative'),
+('Sálfræði', 'Fólk og hugsun', 'social'),
+('Kennsla', 'Kenna öðrum', 'social'),
+('Vélvirki', 'Verklegt og tæknilegt', 'hands'),
+('Smíði', 'Handavinna og byggingar', 'hands');

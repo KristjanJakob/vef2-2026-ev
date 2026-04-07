@@ -2,16 +2,33 @@
 <html>
 <head>
   <title>Niðurstaða</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <% if (program) { %>
-    <h1>Þú ættir að skoða:</h1>
-    <h2><%= program.title %></h2>
-    <p><%= program.description %></p>
-  <% } else { %>
-    <p>Engin niðurstaða fannst.</p>
-  <% } %>
+  <div class="container">
+    <div class="card">
+      <h1>Þetta gæti hentað þér:</h1>
 
-  <a href="/">Til baka</a>
+      <% if (programs && programs.length > 0) { %>
+
+        <% programs.forEach((p, index) => { %>
+          <div class="result">
+            <h2>
+              <%= index + 1 %>. <%= p.title %>
+            </h2>
+
+            <p><%= p.description %></p>
+
+            <p><strong>Match:</strong> <%= p.score * 10 %>%</p>
+          </div>
+        <% }) %>
+
+      <% } else { %>
+        <p>Engin niðurstaða fannst.</p>
+      <% } %>
+
+      <a href="/" class="btn">Til baka</a>
+    </div>
+  </div>
 </body>
 </html>

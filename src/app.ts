@@ -1,10 +1,11 @@
-import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+
+dotenv.config({path: path.resolve(process.cwd(), '.env')});
+
+import express from 'express';
 import quizRouter from './routes/quiz';
 import indexRouter from './routes/index';
-
-dotenv.config();
 
 const app = express();
 
