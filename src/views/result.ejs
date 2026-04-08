@@ -5,30 +5,35 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>Þetta gæti hentað þér:</h1>
+  <%- include('components/header') %>
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1>Þetta gæti hentað þér:</h1>
 
-      <% if (programs && programs.length > 0) { %>
+        <% if (programs && programs.length > 0) { %>
 
-        <% programs.forEach((p, index) => { %>
-          <div class="result">
-            <h2>
-              <%= index + 1 %>. <%= p.title %>
-            </h2>
+          <% programs.forEach((p, index) => { %>
+            <div class="result">
+              <h2>
+                <a href="/quiz/program/<%= p.title %>">
+                  <%= index + 1 %>. <%= p.title %>
+                </a>
+              </h2>
+              
+              <p><%= p.description %></p>
+              <p><strong>Match:</strong> <%= p.score * 10 %>%</p>
+            </div>
+          <% }) %>
 
-            <p><%= p.description %></p>
+        <% } else { %>
+          <p>Engin niðurstaða fannst.</p>
+        <% } %>
 
-            <p><strong>Match:</strong> <%= p.score * 10 %>%</p>
-          </div>
-        <% }) %>
-
-      <% } else { %>
-        <p>Engin niðurstaða fannst.</p>
-      <% } %>
-
-      <a href="/" class="btn">Til baka</a>
+        <a href="/" class="btn">Til baka</a>
+      </div>
     </div>
-  </div>
+  </main>
+  <%- include('components/footer') %>
 </body>
 </html>

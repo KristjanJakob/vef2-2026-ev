@@ -1,14 +1,16 @@
 import express from 'express';
-import { getPrograms, insertResult } from '../db/queries';
+import { getPrograms, insertResult, getProgramWithSchools } from '../db/queries';
 import { calculateScores } from '../services/scoring';
 
 const router = express.Router();
 
 type Program = {
-    id: number;
-    title: string;
-    description: string;
-    trait: string;
+  id: number;
+  title: string;
+  description: string;
+  trait: string;
+  school: string;
+  link: string;
 }
 
 router.get('/', (req, res) => {
@@ -43,6 +45,23 @@ router.post('/', async (req, res) => {
   }
 
   res.render('result', { programs: topResults });
+});
+
+router.get('/program/:title', async (req, res) => {
+  const title = req.params.title;
+  const schools = await getProgramWithSchools(title);
+
+  if (!schools.length) {
+    return res.render('program', { program: null });
+  }
+
+  const program = {
+    title: schools[0].title,
+    description: schools[0].description,
+    schools: schools.map((s: any) => ({ name: s.school_name, link: s.link }))
+  };
+
+  res.render('program', { program });
 });
 
 export default router;

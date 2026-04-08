@@ -5,44 +5,49 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <form method="POST" id="quizForm">
-        <div id="step1">
-          <h2>1. Hvað heillar þig mest?</h2>
-          <div class="options">
-            <button type="button" class="option first-option" data-interest="math">📐 Stærðfræði</button>
-            <button type="button" class="option first-option" data-interest="art">🎨 List</button>
-            <button type="button" class="option first-option" data-interest="people">🤝 Vinna með fólki</button>
-            <button type="button" class="option first-option" data-interest="tech">💻 Tækni</button>
+  <%- include('components/header') %>
+  <main>
+    <div class="container">
+      <div class="card">
+        <form method="POST" id="quizForm">
+          <div id="step1">
+            <h2>1. Hvað heillar þig mest?</h2>
+            <div class="options">
+              <button type="button" class="option first-option" data-interest="math">📐 Stærðfræði</button>
+              <button type="button" class="option first-option" data-interest="art">🎨 List</button>
+              <button type="button" class="option first-option" data-interest="people">🤝 Vinna með fólki</button>
+              <button type="button" class="option first-option" data-interest="tech">💻 Tækni</button>
+            </div>
           </div>
-        </div>
-      
-        <div id="step2" style="display:none;">
-          <h2 id="step2Title">2. Spurning</h2>
-          <div id="step2Options" class="options"></div>
-        </div>
-      
-        <div id="step3" style="display:none;">
-          <h2 id="step3Title">3. Spurning</h2>
-          <div id="step3Options" class="options"></div>
-      
-          <div class="sliderBlock">
-            <label for="confidence">Hversu mikið fílarðu að leysa vandamál?</label>
-            <input type="range" id="confidence" name="confidence" min="0" max="10" value="5">
-            <p>Val: <span id="confidenceValue">5</span>/10</p>
+        
+          <div id="step2" style="display:none;">
+            <h2 id="step2Title">2. Spurning</h2>
+            <div id="step2Options" class="options"></div>
+            <button type="button" class="btn" id="backToStep1">Til baka</button>
           </div>
-      
-          <input type="hidden" name="interest" id="interestInput">
-          <input type="hidden" name="answer2" id="answer2Input">
-          <input type="hidden" name="answer3" id="answer3Input">
-      
-          <button type="submit" class="btn">Senda</button>
-        </div>
-      </form>
+        
+          <div id="step3" style="display:none;">
+            <h2 id="step3Title">3. Spurning</h2>
+            <div id="step3Options" class="options"></div>
+        
+            <div class="sliderBlock">
+              <label for="confidence">Hversu mikið fílarðu að leysa vandamál?</label>
+              <input type="range" id="confidence" name="confidence" min="0" max="10" value="5">
+              <p>Val: <span id="confidenceValue">5</span>/10</p>
+            </div>
+        
+            <input type="hidden" name="interest" id="interestInput">
+            <input type="hidden" name="answer2" id="answer2Input">
+            <input type="hidden" name="answer3" id="answer3Input">
+            <button type="button" class="btn" id="backToStep2">Til baka</button>
+            <button type="submit" class="btn">Senda</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
 
   <script src="/js/quiz-client.js"></script>
+  <%- include('components/footer') %>
 </body>
 </html>

@@ -5,13 +5,18 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>Velkomin í Study Pathfinder</h1>
-      <p>Finndu hvaða nám gæti hentað þér</p>
+  <%- include('components/header') %>
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1>Velkomin í Study Pathfinder</h1>
+        <p>Finndu hvaða nám gæti hentað þér</p>
 
-      <a href="/quiz" class="btn">Byrja Quiz</a>
+        <a href="/quiz" class="btn">Byrja Quiz</a>
+      </div>
     </div>
-  </div>
+  </main>
+
+  <%- include('components/footer') %>
 </body>
 </html>

@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const interestInput = document.getElementById('interestInput');
     const answer2Input = document.getElementById('answer2Input');
     const answer3Input = document.getElementById('answer3Input');
+
+    const backToStep1 = document.getElementById('backToStep1');
+    const backToStep2 = document.getElementById('backToStep2'); 
   
     const slider = document.getElementById('confidence');
     const confidenceValue = document.getElementById('confidenceValue');
@@ -140,5 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
       slider.addEventListener('input', () => {
         confidenceValue.textContent = slider.value;
       });
+    }
+
+    if (backToStep1) {
+        backToStep1.addEventListener('click', () => {
+          step2.style.display = 'none';
+          step1.style.display = 'block';
+          answer2Input.value = '';
+        });
+    }
+      
+    if (backToStep2) {
+        backToStep2.addEventListener('click', () => {
+          step3.style.display = 'none';
+          step2.style.display = 'block';
+          answer3Input.value = '';
+        });
     }
 });

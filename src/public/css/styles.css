@@ -1,13 +1,23 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #111827;
     color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+main {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
 }
   
 .container {
@@ -87,7 +97,7 @@ a.btn:hover {
     border-radius: 12px;
     background: #6d6d6d4f;
 }
-
+  
 p {
     color: #d1d5db;
 }
@@ -102,4 +112,64 @@ p {
   
 .result p {
     margin: 0;
+}
+  
+h2 a {
+    color: white;
+}
+  
+h2 a:hover {
+    text-decoration: underline;
+}
+  
+.result a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #93c5fd;
+    word-break: break-all;
+}
+  
+.result a:hover {
+    text-decoration: underline;
+}
+  
+header {
+    background: #1f2937;
+    border-bottom: 1px solid #374151;
+    padding: 1rem 2rem;
+}
+  
+.header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+}
+  
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+  
+nav a:hover {
+    color: white;
+}
+  
+footer {
+    border-top: 1px solid #374151;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-top: 0;
 }
