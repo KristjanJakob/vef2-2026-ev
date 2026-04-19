@@ -14,17 +14,16 @@
                     <p><%= program.description %></p>
                 
                     <div class="result">
-                    <p><strong>Hvar er hægt að læra þetta?</strong></p>
-                    <% program.schools.forEach(s => { %>
+                        <p><strong>Hvar er hægt að læra þetta?</strong></p>
                         <p>
-                        <a href="<%= s.link %>" target="_blank"><%= s.name %></a>
+                            <a href="<%= program.link %>" target="_blank"><%= program.school %></a>
                         </p>
-                    <% }) %>
                     </div>
                 <% } else { %>
                     <p>Nám fannst ekki.</p>
                 <% } %>
-            <button type="button" class="btn" onclick="history.back()">Til baka</button>
+
+                <button type="button" class="btn" onclick="history.back()">Til baka</button>
             </div>
         </div>
     </main>

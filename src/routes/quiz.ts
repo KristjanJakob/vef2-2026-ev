@@ -1,5 +1,5 @@
 import express from 'express';
-import { getPrograms, insertResult, getProgramWithSchools } from '../db/queries';
+import { getPrograms, insertResult } from '../db/queries';
 import { calculateScores } from '../services/scoring';
 
 const router = express.Router();
@@ -22,10 +22,13 @@ router.post('/', async (req, res) => {
   const confidence = Number(req.body.confidence ?? 5);
   const answer2 = String(req.body.answer2 ?? '');
   const answer3 = String(req.body.answer3 ?? '');
+  const answer4 = String(req.body.answer4 ?? '');
+  const answer5 = String(req.body.answer5 ?? '');
+  const answer6 = String(req.body.answer6 ?? '');
   
 
-  const scores = calculateScores(interest, confidence, answer2, answer3);
-
+  const scores = calculateScores(interest, confidence, answer2, answer3, answer4, answer5, answer6);
+  
   const programs = (await getPrograms()) as Program[];
 
   const results = programs.map((p) => {
@@ -49,17 +52,9 @@ router.post('/', async (req, res) => {
 
 router.get('/program/:title', async (req, res) => {
   const title = req.params.title;
-  const schools = await getProgramWithSchools(title);
 
-  if (!schools.length) {
-    return res.render('program', { program: null });
-  }
-
-  const program = {
-    title: schools[0].title,
-    description: schools[0].description,
-    schools: schools.map((s: any) => ({ name: s.school_name, link: s.link }))
-  };
+  const programs = (await getPrograms()) as Program[];
+  const program = programs.find((p) => p.title === title);
 
   res.render('program', { program });
 });
