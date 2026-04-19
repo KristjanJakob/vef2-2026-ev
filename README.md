@@ -80,7 +80,7 @@ http://localhost:3000
 - Skrifa skýrslu
 
 ## Hýsing
-Render:
+Render: https://vef2-2026-ev.onrender.com/
 
 
 ## GitHub repo
