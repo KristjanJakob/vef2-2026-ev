@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(process.cwd(), 'src', 'views'));
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'src', 'public')));
 
 app.use('/', indexRouter);
 app.use('/quiz', quizRouter);
