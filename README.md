@@ -85,3 +85,29 @@ Render: https://vef2-2026-ev.onrender.com/
 
 ## GitHub repo
 https://github.com/KristjanJakob/vef2-2026-ev
+
+## Matskvarði
+
+20% Framendi
+- Uppsetning á síðum (quiz, niðurstöður, program síða)
+- Notkun á EJS og JavaScript
+- Notendaupplifun og flæði
+
+20% Bakendi
+- Notkun á Express og routing
+- POST og GET beiðnir
+- Tenging við scoring system
+
+20% Gagnagrunnur
+- PostgreSQL uppsetning
+- Geymsla og sókn gagna
+- Tenging við backend
+
+20% Scoring system
+- Útfærsla á reikniriti
+- Rétt útreikningur á niðurstöðum
+- Röðun niðurstaðna
+
+20% Hýsing
+- Verkefni keyrandi á Render
+- Tenging við gagnagrunn í hýsingu
